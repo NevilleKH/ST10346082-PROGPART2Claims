@@ -6,52 +6,124 @@
 @model WebApplication1.Models.AddClaimViewModel
 
 
-<h1>Add Student</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
 
-<form method="post">
-    <div class="mt-3">
-        <label class="form-label">ID</label>
-        <input type="number" class="form-control" asp-for="Id" />
+        h1 {
+            text-align: center;
+            color: #333;
+        }
 
-    </div>
-    <div class="mt-3">
-        <label class="form-label">Full Name</label>
-        <input type="text" class="form-control" asp-for="FullName" />
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-    </div>
+        .form-label {
+            font-weight: bold;
+            color: #555;
+        }
 
-    <div class="mt-3">
-        <label class="form-label">UPLOAD FILE</label>
-        <input type="file" id="file" name="filename">
-    </div>
-   
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
 
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
 
-    <div class="mt-3">
-        <label class="form-label">Hours Worked</label>
-        <input name="HoursWorked" type="number" class="form-control" asp-for="HoursWorked" />
-    </div>
+            .btn-primary:hover {
+                background-color: #0056b3;
+            }
 
-    <div class="mt-3">
-        <label class="form-label">Hourly Rate</label>
-        <input name="HourlyRate" type="number" class="form-control" asp-for="HourlyRate" />
-    </div>
+        .mt-3 {
+            margin-top: 1.5rem;
+        }
 
-    <div class="mt-3">
-        <button type="button" onclick="performCalc()" class="btn btn-primary">Total</button>
-    </div>
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
 
-    <div class="mt-3">
-        <label class="form-label">Total Amount</label>
-        <input id="hAnswer" type="number" class="form-control" asp-for="TotalAmount" readonly />
-    </div>
-    <div class="mt-3">
-        <label class="form-label">Claim Status</label>
-        <input type="text" class="form-control" asp-for="ClaimStatus" value="Pending" readonly/>
+        input[type="file"] {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
 
-    </div>
-    <div class="mt-3">
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
-</form>
+    <h1>Add Student</h1>
 
+    <form method="post">
+        <div class="form-group">
+            <label class="form-label">ID</label>
+            <input type="number" class="form-control" asp-for="Id" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-control" asp-for="FullName" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">UPLOAD FILE</label>
+            <input type="file" id="file" name="filename" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Hours Worked</label>
+            <input name="hWorked" type="number" class="form-control" asp-for="HoursWorked" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Hourly Rate</label>
+            <input name="hRate" type="number" class="form-control" asp-for="HourlyRate" />
+        </div>
+
+        <div class="form-group">
+            <button type="button" onclick="performCalc()" class="btn btn-primary">Total</button>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Total Amount</label>
+            <input id="hAnswer" type="number" class="form-control" asp-for="TotalAmount" readonly />
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Claim Status</label>
+            <input type="text" class="form-control" asp-for="ClaimStatus" value="Pending" />
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+
+</body>
+</html>

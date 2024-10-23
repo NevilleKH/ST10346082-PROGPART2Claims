@@ -20,3 +20,13 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+function performCalc() {
+    const hoursWorked = document.querySelector('input[name="hWorked"]').value;
+    const hourlyRate = document.querySelector('input[name="hRate"]').value;
+    const totalAmount = hoursWorked * hourlyRate;
+    document .getElementById('hAnswer').value = totalAmount;
+}
+
+
+
