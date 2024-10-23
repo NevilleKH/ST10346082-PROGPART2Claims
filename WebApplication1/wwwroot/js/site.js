@@ -6,8 +6,8 @@
 
 function performCalc() {
     var answer; 
-    var worked = document.getElementsByName('hWorked')[0].value;
-    var rate = document.getElementsByName('hRate')[0].value;
+    var worked = document.getElementsByName('HoursWorked')[0].value;
+    var rate = document.getElementsByName('HourlyRate')[0].value;
 
     answer = parseFloat(worked) * parseFloat(rate);
 

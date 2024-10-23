@@ -35,7 +35,7 @@ namespace WebApplication1.Controllers
             };
             await dbContext.Claims.AddAsync(claim);
             await dbContext.SaveChangesAsync();
-            return View();
+            return RedirectToAction("ClaimsStatus");
         }
 
         [HttpGet]
