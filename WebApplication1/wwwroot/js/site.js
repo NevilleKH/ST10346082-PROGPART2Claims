@@ -13,3 +13,12 @@ function performCalc() {
 
     document.getElementById('hAnswer').value = answer;
 }
+
+const uploadField = document.getElementById("file");
+
+uploadField.onchange = function () {
+    if (this.files[0].size > 1048576) { 
+        alert("File must be 1mb or less");
+        this.value = ""; 
+    }
+};
